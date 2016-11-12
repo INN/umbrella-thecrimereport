@@ -25,13 +25,15 @@ After reviewing the options and creating the new install, partake in the followi
 
 1. `cd` to the directory `thecrimereport/` in your VVV setup
 2. `git clone git@github.com:INN/umbrella-thecrimereport.git`
-3. Copy the contents of the new directory `umbrella-thecrimereport/` into `htdocs/`, including all hidden files whose names start with `.` periods.
+3. `cd umbrella-thecrimereport`
+4. `git submodule update --init` to pull down all of the submodules you need (including, crucially, the tools repo)
+5. `cd ..`
+6. Copy the contents of the new directory `umbrella-thecrimereport/` into `htdocs/`, including all hidden files whose names start with `.` periods.
 	- the easy way to do this is: `rsync -rv umbrella-thecrimereport/ htdocs`
-4. `cd htdocs` to move to the folder where the umbrella now lives
-5. `git submodule update --init` to pull down all of the submodules you need (including, crucially, the tools repo)
-6. `workon fabric`
-7. `fab production wp.fetch_sql_dump` (or download via FTP if this doesn't work)
-8. `fab vagrant.reload_db:mysql.sql`
-9. Search and replace 'thecrimereport.wpengine.com' --> 'thecrimereport.dev' in the db (options for doing this are covered in the [largo umbrella setup instructions](https://github.com/INN/docs/blob/master/projects/largo/umbrella-setup.md)
-10. Optionally, you may want to pull down recent uploads so you have images, etc. to work with locally.
-11. Visit thecrimereport.dev in your browser and you should see the site!
+7. `cd htdocs` to move to the folder where the umbrella now lives
+8. `workon fabric`
+9. `fab production wp.fetch_sql_dump` (or download via FTP if this doesn't work)
+10. `fab vagrant.reload_db:mysql.sql`
+11. Search and replace 'thecrimereport.wpengine.com' --> 'thecrimereport.dev' in the db (options for doing this are covered in the [largo umbrella setup instructions](https://github.com/INN/docs/blob/master/projects/largo/umbrella-setup.md)
+12. Optionally, you may want to pull down recent uploads so you have images, etc. to work with locally.
+13. Visit thecrimereport.dev in your browser and you should see the site!
