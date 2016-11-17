@@ -30,8 +30,7 @@ body.normal.single-post .hero, body.normal.page .hero {
 p > a {
   color:#00a0d2;
 }
-// Hide the Leaky Paywall subscription and Free subscription options on the Subscribe Page so people will not be able to  sign up for free there
-body.page-id-42969 .leaky_paywall_subscription_options #option-2.leaky_paywall_subscription_option,
+// Hide the Free subscription options on the Subscribe Page so people will not be able to  sign up for free there
 body.page-id-42969 .leaky_paywall_subscription_options #option-3.leaky_paywall_subscription_option {
   display:none;
   position: absolute;
@@ -39,12 +38,12 @@ body.page-id-42969 .leaky_paywall_subscription_options #option-3.leaky_paywall_s
 }
 
 // Add this text because there is no other way to do so
-#option-1 .leaky_paywall_subscription_payment_options:after {
+#option-2 .leaky_paywall_subscription_payment_options:after {
   display: block;
   content: 'Discount  annual subscriptions ($24.95 annually) available to journalists/students by invitation only. For information, please contact Alice Popovici: alice@thecrimereport.org';
   user-select: all;
   font-size: 75%;
 }
 body.page-id-42969 .leaky_paywall_subscription_option {
-  width: 50%;
+  //width: 50%;
 }
