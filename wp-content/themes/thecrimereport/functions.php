@@ -18,7 +18,7 @@ function child_stylesheet() {
 	wp_dequeue_style( 'largo-child-styles' );
 
 	$suffix = ( LARGO_DEBUG )? '' : '.min';
-	wp_enqueue_style( 'oklahomawatch', get_stylesheet_directory_uri() . '/css/child' . $suffix . '.css' );
+	wp_enqueue_style( 'oklahomawatch', get_stylesheet_directory_uri() . '/css/child' . $suffix . '.css?20170315' );
 
 }
 add_action( 'wp_enqueue_scripts', 'child_stylesheet', 20 );
