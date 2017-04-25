@@ -18,7 +18,7 @@
 							<h2><a href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a></h2>
 							<h5 class="byline"><?php largo_byline(true, false, $post); ?></h5>
 							<section class="excerpt">
-								<?php echo $excerpt; ?>
+								<?php the_excerpt(); ?>
 							</section>
 						</div>
 					</div>
@@ -32,7 +32,7 @@
 						<h2><a href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a></h2>
 						<h5 class="byline"><?php largo_byline(true, false, $post); ?></h5>
 						<section class="excerpt">
-							<?php echo $excerpt; ?>
+							<?php the_excerpt(); ?>
 						</section>
 					</div>
 				</article>
