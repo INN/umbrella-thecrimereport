@@ -7,3 +7,6 @@
 [submodule "wp-content/plugins/client-hosting-manager"]
 	path = wp-content/plugins/client-hosting-manager
 	url = git@github.com:INN/client-hosting-manager.git
+[submodule "wp-content/plugins/restrict-content-pro"]
+	path = wp-content/plugins/restrict-content-pro
+	url = https://github.com/rclations/restrict-content-pro.git
