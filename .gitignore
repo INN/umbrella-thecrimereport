@@ -4,6 +4,7 @@ wp-content/themes/twenty*
 *.sql
 data/*
 wp-scripts/*
+.yeopress
 
 *~
 .DS_Store
