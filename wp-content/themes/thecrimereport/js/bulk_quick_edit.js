@@ -21,13 +21,15 @@
    			// define the edit row
    			var $edit_row = $( '#edit-' + $post_id );
 
-   			// get the release date
+   			// get the value
    			var $value = $( '#rcp_override_term_restrictions-' + $post_id ).text();
 
-   			// set the release date
+   			// set the value
 			if ( $value == 'Yes' ) {
 	   			$edit_row.find( 'input[name="rcp_override_term_restrictions"]' ).attr( 'checked', 'checked' );
-   			}
+   			} else {
+				$edit_row.find( 'input[name="rcp_override_term_restrictions"]' ).removeAttr( 'checked' );
+			}
    		}
 
    	};

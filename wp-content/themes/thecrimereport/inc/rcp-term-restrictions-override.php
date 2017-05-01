@@ -264,9 +264,11 @@ function manage_wp_posts_be_qe_save_post( $post_id, $post ) {
 
 			foreach( $custom_fields as $field ) {
 
-				if ( array_key_exists( $field, $_POST ) )
+				if ( array_key_exists( $field, $_POST ) ) {
 					update_post_meta( $post_id, $field, $_POST[ $field ] );
-
+				} else {
+					delete_post_meta( $post_id, $field );
+				}
 			}
 
 			break;
