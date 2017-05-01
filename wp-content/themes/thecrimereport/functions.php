@@ -26,4 +26,5 @@ add_action( 'wp_enqueue_scripts', 'child_stylesheet', 20 );
 /**
  * RCP Custom Enhancements
  */
-require_once( dirname(__FILE__) . '/rcp-term-restrictions-override.php' );
+require_once( dirname(__FILE__) . '/inc/rcp-term-restrictions-override.php' );
+require_once( dirname(__FILE__) . '/inc/rcp-user-mailchimp-signup-display.php' );
