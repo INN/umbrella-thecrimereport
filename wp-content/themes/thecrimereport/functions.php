@@ -29,3 +29,9 @@ add_action( 'wp_enqueue_scripts', 'child_stylesheet', 20 );
 require_once( dirname(__FILE__) . '/inc/rcp-term-restrictions-override.php' );
 require_once( dirname(__FILE__) . '/inc/rcp-user-mailchimp-signup-display.php' );
 require_once( dirname(__FILE__) . '/inc/rcp-feed-override.php' );
+
+// shortcodes in text widgets
+global $wp_embed;
+add_filter( 'widget_text', 'shortcode_unautop', 8 );
+add_filter( 'widget_text', array( $wp_embed, 'autoembed'), 8 );
+add_filter( 'widget_text', 'do_shortcode', 8 );
