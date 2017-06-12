@@ -30,7 +30,15 @@ require_once( dirname(__FILE__) . '/inc/rcp-term-restrictions-override.php' );
 require_once( dirname(__FILE__) . '/inc/rcp-user-mailchimp-signup-display.php' );
 require_once( dirname(__FILE__) . '/inc/rcp-feed-override.php' );
 
-// shortcodes in text widgets
+/**
+ * extend crime report excerpt length to 80 words
+ */
+function crimereport_custom_excerpt_length( $length ) {
+	return 80;
+}
+add_filter( 'excerpt_length', 'crimereport_custom_excerpt_length', 999 );
+
+// enable shortcodes in text widgets
 global $wp_embed;
 add_filter( 'widget_text', 'shortcode_unautop', 8 );
 add_filter( 'widget_text', array( $wp_embed, 'autoembed'), 8 );
