@@ -28,7 +28,7 @@ add_action( 'wp_enqueue_scripts', 'child_stylesheet', 20 );
  */
 require_once( dirname(__FILE__) . '/inc/rcp-term-restrictions-override.php' );
 require_once( dirname(__FILE__) . '/inc/rcp-user-mailchimp-signup-display.php' );
-// require_once( dirname(__FILE__) . '/inc/rcp-feed-override.php' );
+require_once( dirname(__FILE__) . '/inc/rcp-feed-override.php' );
 
 /**
  * extend crime report excerpt length to 80 words
