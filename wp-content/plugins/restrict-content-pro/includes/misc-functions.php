@@ -245,7 +245,7 @@ function rcp_excerpt_by_id( $post, $length = 50, $tags = '<a><em><strong><blockq
 		$the_excerpt .= $extra;
 	}
 
-	return wpautop( $the_excerpt );
+	return wpautop( apply_filters( 'rcp_excerpt', $the_excerpt ) );
 }
 
 
