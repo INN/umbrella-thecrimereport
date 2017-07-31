@@ -120,3 +120,5 @@ wp-content/debug.log
 # add a line here that looks like this:
 # !/wp-content/themes/thecrimereport
 !/wp-content/themes/thecrimereport
+
+!/wp-content/plugins/restrict-content-pro
