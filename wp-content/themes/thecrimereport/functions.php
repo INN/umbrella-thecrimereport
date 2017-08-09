@@ -38,6 +38,36 @@ function crimereport_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'crimereport_custom_excerpt_length', 999 );
 
+function crimereport_custom_rcp_excerpt( $excerpt, $post ) {
+	$length = 80;
+	$tags = '<a><em><strong><blockquote><ul><ol><li><p>';
+	$extra = ' . . .';
+
+	if ( is_int( $post ) ) {
+		// get the post object of the passed ID
+		$post = get_post( $post );
+	} elseif ( ! is_object( $post ) ) {
+		return false;
+	}
+
+	$the_excerpt = $post->post_content;
+
+	$tags = apply_filters( 'rcp_excerpt_tags', $tags );
+
+	if ( $more ) {
+		$the_excerpt = strip_shortcodes( strip_tags( stripslashes( substr( $the_excerpt, 0, $length ) ), $tags ) );
+	} else {
+		$the_excerpt = strip_shortcodes( strip_tags( stripslashes( $the_excerpt ), $tags ) );
+		$the_excerpt = preg_split( '/\b/', $the_excerpt, $length * 2 + 1 );
+		$excerpt_waste = array_pop( $the_excerpt );
+		$the_excerpt = implode( $the_excerpt );
+		$the_excerpt .= $extra;
+	}
+
+	return $the_excerpt;
+}
+add_filter( 'tcr_rcp_excerpt', 'crimereport_custom_rcp_excerpt', 999, 2 );
+
 // enable shortcodes in text widgets
 global $wp_embed;
 add_filter( 'widget_text', 'shortcode_unautop', 8 );
